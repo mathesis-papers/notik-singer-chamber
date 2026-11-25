@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24446066",
     "current_version": 3,
-    "doi": null,
+    "doi": "10.5281/zenodo.24446067",
     "lean_source": {
       "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
       "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
