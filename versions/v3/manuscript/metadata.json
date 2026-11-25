@@ -1,0 +1,15 @@
+{
+  "id": "notik-singer-chamber",
+  "revision": 3,
+  "problem_ids": ["notik-singer-chamber", "notik-bose-ruzsa-chambers"],
+  "topic": "Notik's Singer-ruler conjecture, sparse positive certificates, and the Bose and Ruzsa questions",
+  "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We prove Notik's conjecture in Section 7, page 7 of Golomb rulers with real marks (Zenodo version 2, 31 October 2026, DOI 10.5281/zenodo.23844781; arXiv:2611.22656v1): for every prime power, every Singer ruler is the unique shortest point of its real, unit-separated distance-order chamber. More generally, cutting any cyclic perfect difference set at its unique largest gap gives this property. Every positive integer smaller than the removed gap occurs as an ordinary distance; the chamber inequalities therefore bound each retained adjacent gap below by its integer value. We give a positive integer dual certificate supported on exactly one row per retained gap; its matrix is unit triangular. The same argument gives sharp stability bounds. Explicit largest-gap examples answer Notik's analogous Bose and Ruzsa questions negatively.",
+  "summary": "A complete prefix of ordinary distances forces each adjacent gap to its integer lower bound. Every largest-gap cyclic perfect-difference-set cut therefore uniquely minimizes its chamber length. One tight row per adjacent gap forms a unit-triangular positive-integer certificate. Gapwise domination gives stability and all positive weighted objectives. Largest-gap Bose and Ruzsa examples shorten from 29 to 28 and from 9 to 8 in their own chambers.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+}

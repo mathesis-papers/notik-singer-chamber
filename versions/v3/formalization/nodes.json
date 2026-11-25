@@ -1,0 +1,284 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s1",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s1",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "Put $a_i=x_i-x_{i-1}$ for $1\\le i\\le k$, and\n$A=\\max_i a_i$. If every integer $1,\\ldots,A$ occurs as a positive\ndistance of $x$, then every $y\\in C(x)$ satisfies\n\\[\n y_i-y_{i-1}\\ge a_i\\qquad(1\\le i\\le k).\n\\]\nConsequently $x$ is the unique point of minimum length in $C(x)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s2",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "Under the hypotheses of Lemma~\\ref{lem:prefix}, put\n$\\varepsilon=y_k-x_k$ for $y\\in C(x)$. Then\n\\[\n 0\\le y_i-x_i\\le\\varepsilon\\quad(0\\le i\\le k),\\qquad\n \\sum_{i=1}^k\\left|(y_i-y_{i-1})-a_i\\right|=\\varepsilon.\n\\]\nEvery nonnegative weighted sum of the gaps is minimized at $x$;\nif all weights are positive, the minimizer is unique.\nThe coefficient $1$ in the coordinate bound is sharp.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s3",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s3",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "Every largest-gap cut of a cyclic perfect difference set is the unique\nshortest point of its normalized unit-separated real chamber.\nIn fact every retained adjacent gap is minimized at that cut.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s4",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "For every prime power $q$, every unit multiple of every Singer perfect\ndifference set modulo $q^2+q+1$, cut at its unique largest cyclic gap, is the\nunique shortest point of its normalized real chamber.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s5",
+      "kind": "paper",
+      "label": "Proposition",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s5",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "These rows have positive integer weights and satisfy\n\\[\n \\sum_{d=1}^A w_dr_d=(1,\\ldots,1),\\qquad\n \\sum_{d=1}^A w_d=\\sum_{i=1}^k a_i=L.\n\\]\nTheir span is $\\R^k$. Thus they certify both the minimum $L$ and\nthe uniqueness of the minimizer.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s6",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s6",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "Under the hypotheses of Lemma~\\ref{lem:prefix}, reorder the gap\ncoordinates so that $a_1<\\cdots<a_k$. For each $i$, take the row\n$h_i=e_i-v_{a_i-1}$, with $v_0=0$ as above. These are $k$ tight\nchamber rows. Their matrix $H$ is unit lower triangular, with all\noff-diagonal entries nonpositive. The vector\n\\[\n \\lambda=(H^{\\mathsf T})^{-1}{\\bf1}\n\\]\nhas positive integer entries and satisfies\n\\[\n \\sum_i\\lambda_i h_i={\\bf1},\\qquad \\sum_i\\lambda_i=L.\n\\]\nThus exactly $k$ independent tight rows suffice to certify the\nunique minimum, for every Singer ruler and every other complete-prefix ruler.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:notik-singer-chamber:3:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
+      },
+      "lineage": "collected:notik-singer-chamber:s7",
+      "macros": {
+        "\\R": "\\mathbb R",
+        "\\Z": "\\mathbb Z"
+      },
+      "next_step": "Formalization work is coordinated through the shared requests.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "notik-singer-chamber",
+      "scope": "in_scope",
+      "statement": "The answer to each analogous universal chamber-uniqueness question\nfor the Bose and Ruzsa rulers in \\cite[Section~10, p.~8]{notik} is no,\neven with a largest-gap cut.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
+      "toolchain": null,
+      "version": 3,
+      "work": "notik-singer-chamber"
+    }
+  ]
+}

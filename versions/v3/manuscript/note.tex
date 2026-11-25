@@ -1,0 +1,495 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Proof of Notik's Singer-ruler conjecture with sparse certificates},
+pdfauthor={Haobo Ma; Wenlin Zhang},
+pdfsubject={Largest-gap cuts of cyclic perfect difference sets and unique real chamber minima; CC BY 4.0},
+pdfkeywords={Golomb ruler, Singer difference set, chamber, dual certificate}}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\title{Proof of Notik's Singer-ruler conjecture\\with sparse certificates}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{21 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove Notik's conjecture in Section~7, page~7 of
+\emph{Golomb rulers with real marks} (Zenodo version~2,
+31~October 2026, DOI 10.5281/zenodo.23844781;
+arXiv:2611.\allowbreak22656v1):
+for every prime power, every Singer ruler is the unique shortest
+point of its real, unit-separated distance-order chamber.
+More generally, cutting any cyclic perfect difference set at its unique largest
+gap gives this property. Every positive integer smaller than the removed
+gap occurs as an ordinary distance; the chamber inequalities therefore
+bound each retained adjacent gap below by its integer value.
+We give a positive integer dual certificate supported on exactly one row
+per retained gap; its matrix is unit triangular. The same argument gives
+sharp stability bounds. Explicit largest-gap examples answer Notik's
+analogous Bose and Ruzsa questions negatively.
+\end{abstract}
+
+\section{The question and the chamber}
+
+Notik~\cite[Section~7, p.~7]{notik} states:
+\begin{quote}
+``For every prime power $m$, every Singer ruler is the only shortest point
+of its chamber.''
+\end{quote}
+Here a Singer ruler means a cyclic Singer perfect difference set, possibly
+multiplied by any unit, cut at a largest cyclic gap and translated to begin
+at zero. Notik gives exact certificates for $24\,450$ distinct such rulers
+of orders at most $103$. The argument below works for every order and
+its unique largest-gap cut. Its conclusion concerns one chamber,
+not the optimum over all real rulers.
+Notik's earlier subset-sum work~\cite[Theorems~3.2, 4.3 and~4.4]{subset} uses
+positive integer weights and triangular tight relations for the
+Conway--Guy and Bohman families. Here the relations are obtained directly
+from the ordinary distances immediately below the retained gaps.
+The length formula $L=N-G$ for the shortest translated cut is
+classical; see Dimitromanolakis~\cite[Section~5.7.1, pp.~48--49]{dimitro}
+and the comment in OEIS A401165~\cite{oeisgap}.
+The chamber problem allows all real marks with the same labelled
+distance order, rather than just translations of a cyclic set.
+
+Let $k\ge1$ and let $x=(x_0,\ldots,x_k)$ be an integer Golomb ruler:
+$0=x_0<x_1<\cdots<x_k$, with all positive labelled distances
+$\delta_{ij}(x)=x_j-x_i$ ($0\le i<j\le k$) distinct.
+Its normalized unit-separated chamber $C(x)\subset\R^{k+1}$ consists of
+the vectors $y$ satisfying
+\begin{align}
+ y_0&=0, & \delta_{ij}(y)&\ge1 &&(i<j),\label{eq:positive}\\
+ \delta_{ab}(y)-\delta_{ij}(y)&\ge1
+ &&\text{whenever }\delta_{ij}(x)<\delta_{ab}(x).\label{eq:order}
+\end{align}
+The objective is the length $y_k$. These are the chambers of
+\cite[Section~2]{notik}, written in marks rather than consecutive gaps.
+The underlying ordering of distances is the combinatorial equivalence
+used by Beck, Bogart and Pham~\cite[Section~1]{beck}; the unit separation
+in \eqref{eq:positive}--\eqref{eq:order} fixes the scale.
+The integer vector $x$ itself belongs to $C(x)$, because distinct positive
+integer distances are separated by at least one.
+
+\begin{lemma}[A complete prefix of distances]\label{lem:prefix}
+Put $a_i=x_i-x_{i-1}$ for $1\le i\le k$, and
+$A=\max_i a_i$. If every integer $1,\ldots,A$ occurs as a positive
+distance of $x$, then every $y\in C(x)$ satisfies
+\[
+ y_i-y_{i-1}\ge a_i\qquad(1\le i\le k).
+\]
+Consequently $x$ is the unique point of minimum length in $C(x)$.
+\end{lemma}
+\begin{proof}
+For $1\le d\le A$, choose the labelled pair $(p_d,q_d)$ whose
+reference distance is $d$. Define
+$D_d(y)=y_{q_d}-y_{p_d}$.
+The chamber gives $D_1(y)\ge1$ and
+$D_d(y)-D_{d-1}(y)\ge1$ for $2\le d\le A$.
+Adding yields $D_d(y)\ge d$.
+The distance $a_i$ belongs to the pair $(i-1,i)$, so uniqueness of
+reference distances gives $D_{a_i}(y)=y_i-y_{i-1}$.
+Summation gives $y_k\ge\sum_i a_i=x_k$.
+Equality forces equality in every adjacent-gap bound, since every
+gap excess is nonnegative. With $y_0=x_0=0$, this gives $y=x$.
+\end{proof}
+
+\begin{corollary}[Stability and weighted objectives]\label{cor:stability}
+Under the hypotheses of Lemma~\ref{lem:prefix}, put
+$\varepsilon=y_k-x_k$ for $y\in C(x)$. Then
+\[
+ 0\le y_i-x_i\le\varepsilon\quad(0\le i\le k),\qquad
+ \sum_{i=1}^k\left|(y_i-y_{i-1})-a_i\right|=\varepsilon.
+\]
+Every nonnegative weighted sum of the gaps is minimized at $x$;
+if all weights are positive, the minimizer is unique.
+The coefficient $1$ in the coordinate bound is sharp.
+\end{corollary}
+\begin{proof}
+The gap excesses are nonnegative and sum to $\varepsilon$.
+Each mark excess is a partial sum of them. The weighted assertion
+follows term by term, with equality forcing all gap excesses to vanish
+when the weights are positive. The bound is an equality at $i=k$;
+positive excess occurs, for example, at any dilation $y=tx$, $t>1$.
+\end{proof}
+
+\section{Largest-gap cuts}
+
+A cyclic perfect difference set in $\Z/N\Z$, with $N>1$, is a subset $D$ such that
+each nonzero residue has exactly one representation $b-a$ by an ordered
+pair of distinct elements $a,b\in D$.
+Its cyclic gaps are distinct: each is a nonzero residue represented by
+its consecutive ordered pair, so equal gaps would contradict the perfect
+difference property. Thus the largest cyclic gap $G$ is unique.
+Cut there, and translate and sort the
+remaining marks to obtain
+\[
+ 0=x_0<x_1<\cdots<x_k=L<N,\qquad N=L+G.
+\]
+The retained adjacent gaps are strictly smaller than $G$.
+
+\begin{theorem}\label{thm:main}
+Every largest-gap cut of a cyclic perfect difference set is the unique
+shortest point of its normalized unit-separated real chamber.
+In fact every retained adjacent gap is minimized at that cut.
+\end{theorem}
+\begin{proof}
+First, two equal ordinary positive distances would represent the same
+nonzero residue modulo $N$, contradicting uniqueness of the ordered
+pair. Thus $x$ is an integer Golomb ruler and $x\in C(x)$.
+
+Let $1\le d<G$. The perfect difference property supplies a pair
+$(i,j)$ such that $x_j-x_i\equiv d\pmod N$.
+If $j<i$, its residue is $N-(x_i-x_j)\ge N-L=G$, a contradiction.
+Hence $i<j$, and $0<x_j-x_i<N$ implies $x_j-x_i=d$.
+Therefore every positive integer below $G$ is an ordinary distance.
+
+Let $A$ be the largest retained gap. We have $A<G$.
+Every $1\le d\le A$ therefore occurs by the preceding argument.
+Lemma~\ref{lem:prefix} now proves the assertions.
+\end{proof}
+
+\begin{corollary}[Notik's conjecture]\label{cor:singer}
+For every prime power $q$, every unit multiple of every Singer perfect
+difference set modulo $q^2+q+1$, cut at its unique largest cyclic gap, is the
+unique shortest point of its normalized real chamber.
+\end{corollary}
+\begin{proof}
+Singer's construction~\cite{singer} gives a perfect difference set
+with $q+1$ elements modulo $q^2+q+1$.
+Multiplication by a unit permutes the nonzero difference residues and
+preserves uniqueness of the representing pairs. Translation preserves
+all differences. Theorem~\ref{thm:main} applies to each largest-gap cut.
+For completeness, a finite-field construction establishing the needed
+perfect difference property is given in the appendix.
+\end{proof}
+
+\section{An explicit dual certificate}
+
+The same argument supplies the structured certificate requested in
+\cite[Sections~7 and~10]{notik}.
+Use gap coordinates $g=(g_1,\ldots,g_k)$, with
+$g_i=y_i-y_{i-1}$. A labelled distance is its interval sum.
+Let $v_d\in\{0,1\}^k$ be the interval indicator for the reference
+distance $d$, for $1\le d\le A$, and set $v_0=0$.
+For $d=1,\ldots,A$ put
+\[
+ r_d=v_d-v_{d-1},\qquad
+ w_d=\#\{i:a_i\ge d\}.
+\]
+The rows $r_d\cdot g\ge1$ are valid chamber inequalities and are tight
+at the reference gaps $a=(a_1,\ldots,a_k)$.
+
+\begin{proposition}\label{prop:dual}
+These rows have positive integer weights and satisfy
+\[
+ \sum_{d=1}^A w_dr_d=(1,\ldots,1),\qquad
+ \sum_{d=1}^A w_d=\sum_{i=1}^k a_i=L.
+\]
+Their span is $\R^k$. Thus they certify both the minimum $L$ and
+the uniqueness of the minimizer.
+\end{proposition}
+\begin{proof}
+Every $w_d>0$, since some $a_i=A$.
+The unique interval of distance $a_i$ is the single gap $i$, so
+$v_{a_i}=e_i$, the $i$th coordinate vector. Telescoping gives
+$\sum_{d=1}^{a_i}r_d=e_i$.
+Adding these identities over $i$ gives the first formula; counting
+the pairs $(i,d)$ with $1\le d\le a_i$ gives the second.
+The coordinate-vector identities also prove the span assertion.
+If $\sum_i g_i=L$, then
+$\sum_d w_d(r_d\cdot g-1)=0$; positivity forces every row to be
+tight. Their span then forces $g=a$.
+\end{proof}
+
+For example, $\{0,1,3\}\subset\Z/7\Z$ has cut gap $G=4$ and
+retained gaps $(1,2)$. Here $A=2$, $v_1=(1,0)$,
+$v_2=(0,1)$, $r_1=(1,0)$, $r_2=(-1,1)$, and $(w_1,w_2)=(2,1)$.
+The certificate is $2g_1+(g_2-g_1)\ge3$;
+its two tight rows give $g_1=1$, $g_2=2$.
+
+\begin{theorem}[A sparse unit-triangular certificate]\label{thm:sparse}
+Under the hypotheses of Lemma~\ref{lem:prefix}, reorder the gap
+coordinates so that $a_1<\cdots<a_k$. For each $i$, take the row
+$h_i=e_i-v_{a_i-1}$, with $v_0=0$ as above. These are $k$ tight
+chamber rows. Their matrix $H$ is unit lower triangular, with all
+off-diagonal entries nonpositive. The vector
+\[
+ \lambda=(H^{\mathsf T})^{-1}{\bf1}
+\]
+has positive integer entries and satisfies
+\[
+ \sum_i\lambda_i h_i={\bf1},\qquad \sum_i\lambda_i=L.
+\]
+Thus exactly $k$ independent tight rows suffice to certify the
+unique minimum, for every Singer ruler and every other complete-prefix ruler.
+\end{theorem}
+\begin{proof}
+Adjacent gaps are distinct because all ordinary distances are distinct.
+The interval of length $a_i-1$ uses only gaps smaller than $a_i$;
+after the coordinate permutation its indicator therefore has support
+strictly below $i$. Since $v_{a_i}=e_i$, the row $h_i$ is
+$r_{a_i}$, is a chamber row, and has value one at $a$.
+Write $H=I-B$ with $B$ strictly lower triangular and nonnegative
+integer. Then $B^k=0$, so
+\[
+ (H^{\mathsf T})^{-1}=I+B^{\mathsf T}+\cdots+(B^{\mathsf T})^{k-1}.
+\]
+It follows that each $\lambda_i$ is an integer at least one and
+$H^{\mathsf T}\lambda={\bf1}$. Since $Ha={\bf1}$,
+$\sum_i\lambda_i=\lambda^{\mathsf T}Ha={\bf1}^{\mathsf T}a=L$.
+Equality in the objective forces all $k$ positively weighted rows
+to be tight, and invertibility gives $g=a$. Fewer than $k$ rows
+cannot span the $k$-dimensional gap space.
+\end{proof}
+
+\section{Scope and further questions}
+
+The largest-gap condition matters. Notik's twelve-mark example
+\cite[Proposition~2, pp.~5--6]{notik} is a cut of a perfect difference set
+modulo $133$ with reference marks
+\[
+ (0,4,24,27,67,77,86,88,103,119,125,132).
+\]
+Its removed gap is $1$, whereas its largest cyclic gap is $40$.
+The real ruler
+\[
+ (0,4,22,25,\tfrac{123}{2},\tfrac{141}{2},\tfrac{157}{2},
+ \tfrac{161}{2},94,\tfrac{217}{2},114,121)
+\]
+belongs to the same unit-separated chamber and is shorter.
+This is Notik's prior counterexample to an arbitrary-cut extension;
+that extension is not asserted in the source.
+
+A cyclic Sidon set is a subset of $\Z/M\Z$ in which each nonzero
+residue has at most one representation as an ordered difference of
+distinct elements. For a prime power $q$ and a primitive
+$\theta\in\mathbb F_{q^2}^{\times}$, write
+\[
+ B(\theta)=\{b\in\Z/(q^2-1)\Z:\theta^b=\theta+c
+                  \text{ for some }c\in\mathbb F_q\}.
+\]
+This is Bose's cyclic Sidon construction~\cite[pp.~1--15]{bose};
+see also Ruzsa~\cite[p.~267]{ruzsa} for its parameters.
+For a prime $p\ge3$ and a primitive root $g$ modulo $p$, Ruzsa's
+construction~\cite[Theorem~4.4 and its proof, pp.~267--268]{ruzsa}
+is the cyclic Sidon set $R(p,g)\subset\Z/(p(p-1))\Z$ containing
+the CRT solution $s_i\equiv i\pmod{p-1}$,
+$s_i\equiv g^i\pmod p$ for each $0\le i<p-1$.
+Here a Bose or Ruzsa ruler means a unit multiple of the corresponding
+cyclic Sidon set, cut at a largest cyclic gap and translated to start at
+zero. Notik, Section~10, page~8, asks only for
+``the same for the rulers of Bose [4] and Ruzsa [15]'';
+this family definition is our reading of that question.
+
+\begin{corollary}[The Bose and Ruzsa questions]\label{cor:other}
+The answer to each analogous universal chamber-uniqueness question
+for the Bose and Ruzsa rulers in \cite[Section~10, p.~8]{notik} is no,
+even with a largest-gap cut.
+\end{corollary}
+\begin{proof}
+For Ruzsa, take $p=5$ and primitive root $2$. The CRT conditions
+$s\equiv i\pmod4$, $s\equiv2^i\pmod5$, $0\le i<4$,
+give residues $\{3,14,16,17\}\pmod{20}$. The largest gap is $11$,
+from $3$ to $14$. Cutting there gives $(0,2,3,9)$, whereas
+$(0,2,3,8)$ is shorter. In the reference-labelled order its distances
+are $(1,2,3,5,6,8)$, compared with $(1,2,3,6,7,9)$;
+both are unit separated.
+
+For Bose, work in $\mathbb F_7[\beta]/(\beta^2-3)$ and put
+$\theta=1+\beta$. The polynomial is irreducible since $3$ is a
+nonsquare modulo $7$. Multiplication by $\theta$ sends $(u,v)$ to
+$(u+3v,u+v)$. This recurrence gives
+$\theta^{48}=1$, $\theta^{24}=6$, $\theta^{16}=4$, proving order $48$,
+and the exponents of $\theta+c$, $c=0,\ldots,6$, are respectively
+$(1,18,21,27,6,31,20)$. Multiplication of these exponents by the unit
+$5$ gives $\{4,5,9,11,30,39,42\}\pmod{48}$.
+This instance uses multiplier $5$, but
+$5B(\theta)=8+B(\theta^{11})$ in $\Z/48\Z$, where
+$B(\theta^{11})=\{1,3,22,31,34,44,45\}$ and $\theta^{11}$ is
+primitive, so the same counterexample also belongs to the construction
+without multipliers.
+The largest gap is $19$, from $11$ to $30$. Its cut gives
+\[
+ x=(0,9,12,22,23,27,29),\qquad
+ y=(0,\tfrac{17}2,\tfrac{23}2,21,22,26,28).
+\]
+In the labelled order determined by $x$, the distances of $y$ are
+\[
+\begin{split}
+ &(1,2,3,4,5,6,7,\tfrac{17}2,\tfrac{19}2,\tfrac{21}2,
+ \tfrac{23}2,\tfrac{25}2,\tfrac{27}2,\tfrac{29}2,\\
+ &\hspace{2em}\tfrac{33}2,\tfrac{35}2,\tfrac{39}2,21,22,26,28).
+\end{split}
+\]
+They are unit separated in exactly that order, proving $y\in C(x)$
+and a strict shortening from $29$ to $28$.
+The missing distances $4$ for Ruzsa and $8$ for Bose explain why
+the complete-prefix argument does not apply. These feasible shorter
+points are not claimed to be the chamber minima.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.39\linewidth}>{\raggedright\arraybackslash}p{.54\linewidth}@{}}
+\toprule
+Source item in \cite{notik} & Coverage here\\
+\midrule
+Section~7 conjecture
+& Proved: Corollary~\ref{cor:singer}, for every prime power and unit multiplier.\\
+Sections~7 and~10 request for structured Singer certificates
+& Answered: yes. Theorem~\ref{thm:sparse} gives $k$ unit-triangular rows
+and positive integer weights.\\
+Section~6, Proposition~2: a shorter ruler for a non-largest cut
+& Prior proof cited: Notik (2026). The arbitrary-cut extension is not
+asserted in the source; it fails in this example.\\
+Section~10: analogous Bose and Ruzsa questions
+& Answered: no. Corollary~\ref{cor:other} supplies one largest-gap
+counterexample for each family.\\
+Section~7, reference~[12]: Conway--Guy and Bohman certificates
+& Prior proof cited: Notik (2026), Theorems~3.2, 4.3 and~4.4 of~\cite{subset};
+different subset-sum chambers.\\
+Section~6 rounding remark; Section~8 asymptotic bound
+& Prior proofs cited: Notik (2026), not consequences of our chamber theorem.\\
+Section~10: global real/integer equality for all $n$; cases $11,12$
+& Not covered; chamber uniqueness does not compare different chambers.\\
+Section~10: classification of minimizers at $8,9,10$
+& Not covered by this argument; no global classification is claimed.\\
+Section~10: proximity of nonintegral chamber optima to the global optimum
+& Not covered; the two strict shortenings give feasible chamber points,
+not their optimal lengths.\\
+Sections~1 (p.~1) and~5 (p.~4), reference~[13]: OEIS A003022 and A237749
+& Not covered: optimal integer lengths and counts of distance-order types
+are different from the minimum within a fixed chamber.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Mathematical verification.}
+The pinned Lean source~\cite{lean} contains the declaration
+\begin{center}\small
+\texttt{D5.S3.Geometry.FiniteGeometry.NotikSingerChamber.result}.
+\end{center}
+Its hypotheses are strictly increasing natural marks starting at zero,
+a positive cut gap bounding every adjacent gap, and the cyclic perfect
+difference property modulo the last mark plus the cut gap.
+Its conclusions are uniqueness of ordinary distances, feasibility in the
+real chamber, and equality of every mark whenever a chamber point has
+length at most the reference length.
+The finite-field specialization and the explicit dual-certificate identities
+are given by the written proofs here, as are the complete-prefix
+generalization and stability bounds. The second pinned Lean
+source~\cite{leanother} contains
+\texttt{D5.S3.Geometry.FiniteGeometry.\allowbreak{}NotikBoseRuzsaChamber.result};
+it proves the negation of the disjunction of the universal Bose and
+Ruzsa statements, using precisely the field and CRT witnesses in
+Corollary~\ref{cor:other}.
+The accompanying \texttt{verify.py} checks all perfect difference sets
+containing zero of cardinalities $2$ through $6$, every largest-gap cut
+of each, both certificate formulas, complete-prefix rulers with up to
+five marks and length at most $18$, and the displayed counterexamples,
+using exact integers, finite-field pairs and fractions.
+
+\appendix
+\section{The perfect difference property of Singer sets}
+
+Let $F=\mathbb F_q$ and $E=\mathbb F_{q^3}$, and choose a generator
+$\alpha$ of the cyclic group $E^\times$.
+The quotient $E^\times/F^\times$ is cyclic of order
+$N=q^2+q+1$. Let $T(z)=z+z^q+z^{q^2}$ be the trace and put
+\[
+ D=\{d\in\Z/N\Z:T(\alpha^d)=0\}.
+\]
+The condition is independent of the exponent representative, because
+$\alpha^N\in F^\times$ and $T$ is $F$-linear.
+The trace is not zero: its defining nonzero polynomial has degree
+$q^2<q^3$, so cannot vanish on all of $E$.
+Thus $H=\ker T$ is two-dimensional over $F$, and its nonzero vectors
+give $(q^2-1)/(q-1)=q+1$ projective points, hence $|D|=q+1$.
+
+For a nonzero residue $t\pmod N$, the two planes
+$H$ and $\alpha^{-t}H$ are distinct. Otherwise the two nonzero linear
+functionals $T(z)$ and $T(\alpha^t z)$ would have the same kernel,
+so $T(\alpha^t z)=cT(z)$ for some $c\in F^\times$ and every $z$.
+This would give $T((\alpha^t-c)z)=0$ for every $z$.
+Since multiplication by any nonzero element permutes $E$ and $T\ne0$,
+it follows that $\alpha^t=c$, contradicting $t\ne0\pmod N$.
+The intersection of the two distinct planes in a three-dimensional
+space is a line. Its single projective point gives exactly one residue
+$d$ such that both $d$ and $d+t$ lie in $D$.
+These are exactly the ordered pairs representing the residue $t$.
+This establishes the perfect difference property used in
+Corollary~\ref{cor:singer}, the classical construction of Singer~\cite{singer}.
+
+\begingroup\raggedright
+\begin{thebibliography}{10}
+\bibitem{notik}
+E.~Notik, \emph{Golomb rulers with real marks: the real and integer optima
+agree up to ten marks}, Zenodo version~2 (31 October 2026),
+\url{https://doi.org/10.5281/zenodo.23844781};
+arXiv:2611.22656v1 (17 November 2026),
+\url{https://arxiv.org/abs/2611.22656v1}.
+
+\bibitem{bose}
+R.~C.~Bose, An affine analogue of Singer's theorem,
+\emph{J. Indian Math. Soc. (N.S.)} \textbf{6} (1942), 1--15.
+
+\bibitem{ruzsa}
+I.~Z.~Ruzsa, Solving a linear equation in a set of integers~I,
+\emph{Acta Arith.} \textbf{65}(3) (1993), 259--282;
+Theorem~4.4 and proof, pp.~267--268.
+\url{https://doi.org/10.4064/aa-65-3-259-282}.
+
+\bibitem{singer}
+J.~Singer, A theorem in finite projective geometry and some applications
+to number theory, \emph{Trans. Amer. Math. Soc.} \textbf{43} (1938),
+377--385. \url{https://doi.org/10.1090/S0002-9947-1938-1501951-4}.
+
+\bibitem{beck}
+M.~Beck, T.~Bogart and T.~Pham, Enumeration of Golomb rulers and acyclic
+orientations of mixed graphs, \emph{Electron. J. Combin.}
+\textbf{19}(3) (2012), P42; arXiv:1110.6154,
+\url{https://arxiv.org/abs/1110.6154}.
+
+\bibitem{subset}
+E.~Notik, \emph{Positive dual certificates for real separated subset sums:
+chamber optimality of the Conway--Guy and Bohman sets, and exact values
+up to eight}, arXiv:2611.17360v1 (28 October 2026),
+\url{https://arxiv.org/abs/2611.17360v1}.
+
+\bibitem{dimitro}
+A.~Dimitromanolakis, \emph{Analysis of the Golomb Ruler and the Sidon
+Set Problems, and Determination of Large, Near-Optimal Golomb Rulers},
+diploma thesis, Technical University of Crete (June 2002),
+\url{https://www.cs.toronto.edu/~apostol/golomb/main.pdf}.
+
+\bibitem{oeisgap}
+M.~Becker, \emph{Largest possible gap between adjacent elements of
+cyclic planar difference sets}, OEIS A401165, comment on ruler length,
+\url{https://oeis.org/A401165}.
+
+\bibitem{lean}
+\emph{Largest-gap chamber theorem}, Lean source,
+declaration \texttt{NotikSingerChamber.result},
+\url{https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean}.
+
+\bibitem{leanother}
+\emph{Bose and Ruzsa chamber counterexamples}, Lean source,
+declaration \texttt{NotikBoseRuzsaChamber.result},
+\url{https://github.com/the-omega-institute/trureturing/blob/1a9d63013ef1b813c385f84da25351bc88cc7a98/D5/S3/Geometry/FiniteGeometry/NotikBoseRuzsaChamber.lean}.
+\end{thebibliography}
+\endgroup
+\bigskip
+\noindent\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0).
+\end{document}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Proof of Notik's Singer-ruler conjecture with sparse certificates"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-25"
+version: "3"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/notik-singer-chamber?version=3"
+license: "CC-BY-4.0"

@@ -1,0 +1,642 @@
+{
+  "arithmetic": "exact integers and fractions",
+  "finite_scope": "All cyclic perfect difference sets containing zero, cardinalities 2–6, moduli 3,7,13,21,31; every largest-gap cut of each set.",
+  "perfect_set_checks": [
+    {
+      "cardinality": 2,
+      "modulus": 3,
+      "sets_containing_zero": 2,
+      "largest_gap_cuts_checked": 2
+    },
+    {
+      "cardinality": 3,
+      "modulus": 7,
+      "sets_containing_zero": 6,
+      "largest_gap_cuts_checked": 6
+    },
+    {
+      "cardinality": 4,
+      "modulus": 13,
+      "sets_containing_zero": 16,
+      "largest_gap_cuts_checked": 16
+    },
+    {
+      "cardinality": 5,
+      "modulus": 21,
+      "sets_containing_zero": 10,
+      "largest_gap_cuts_checked": 10
+    },
+    {
+      "cardinality": 6,
+      "modulus": 31,
+      "sets_containing_zero": 60,
+      "largest_gap_cuts_checked": 60
+    }
+  ],
+  "certificate_examples": [
+    {
+      "modulus": 3,
+      "marks": [
+        0,
+        1
+      ],
+      "cut_gap": 2,
+      "gaps": [
+        1
+      ],
+      "rows": [
+        [
+          1
+        ]
+      ],
+      "weights": [
+        1
+      ],
+      "objective": [
+        1
+      ],
+      "bound": 1,
+      "sparse_certificate": {
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "weights": [
+          1
+        ],
+        "gap_order": [
+          0
+        ],
+        "determinant_in_gap_order": 1,
+        "bound": 1
+      }
+    },
+    {
+      "modulus": 7,
+      "marks": [
+        0,
+        1,
+        3
+      ],
+      "cut_gap": 4,
+      "gaps": [
+        1,
+        2
+      ],
+      "rows": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "weights": [
+        2,
+        1
+      ],
+      "objective": [
+        1,
+        1
+      ],
+      "bound": 3,
+      "sparse_certificate": {
+        "rows": [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "weights": [
+          2,
+          1
+        ],
+        "gap_order": [
+          0,
+          1
+        ],
+        "determinant_in_gap_order": 1,
+        "bound": 3
+      }
+    },
+    {
+      "modulus": 13,
+      "marks": [
+        0,
+        4,
+        5,
+        7
+      ],
+      "cut_gap": 6,
+      "gaps": [
+        4,
+        1,
+        2
+      ],
+      "rows": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "weights": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "objective": [
+        1,
+        1,
+        1
+      ],
+      "bound": 7,
+      "sparse_certificate": {
+        "rows": [
+          [
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1
+          ]
+        ],
+        "weights": [
+          1,
+          4,
+          2
+        ],
+        "gap_order": [
+          1,
+          2,
+          0
+        ],
+        "determinant_in_gap_order": 1,
+        "bound": 7
+      }
+    },
+    {
+      "modulus": 21,
+      "marks": [
+        0,
+        2,
+        7,
+        8,
+        11
+      ],
+      "cut_gap": 10,
+      "gaps": [
+        2,
+        5,
+        1,
+        3
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "weights": [
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "objective": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "bound": 11,
+      "sparse_certificate": {
+        "rows": [
+          [
+            1,
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            -1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "weights": [
+          3,
+          1,
+          5,
+          2
+        ],
+        "gap_order": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "determinant_in_gap_order": 1,
+        "bound": 11
+      }
+    },
+    {
+      "modulus": 31,
+      "marks": [
+        0,
+        1,
+        3,
+        8,
+        12,
+        18
+      ],
+      "cut_gap": 13,
+      "gaps": [
+        1,
+        2,
+        5,
+        4,
+        6
+      ],
+      "rows": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          1
+        ]
+      ],
+      "weights": [
+        5,
+        4,
+        3,
+        3,
+        2,
+        1
+      ],
+      "objective": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "bound": 18,
+      "sparse_certificate": {
+        "rows": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            -1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            -1,
+            0,
+            1
+          ]
+        ],
+        "weights": [
+          8,
+          4,
+          2,
+          3,
+          1
+        ],
+        "gap_order": [
+          0,
+          1,
+          3,
+          2,
+          4
+        ],
+        "determinant_in_gap_order": 1,
+        "bound": 18
+      }
+    }
+  ],
+  "nonlargest_cut": {
+    "modulus": 133,
+    "reference_marks": [
+      0,
+      4,
+      24,
+      27,
+      67,
+      77,
+      86,
+      88,
+      103,
+      119,
+      125,
+      132
+    ],
+    "candidate_marks": [
+      "0",
+      "4",
+      "22",
+      "25",
+      "123/2",
+      "141/2",
+      "157/2",
+      "161/2",
+      "94",
+      "217/2",
+      "114",
+      "121"
+    ],
+    "cut_gap": 1,
+    "largest_cyclic_gap": 40,
+    "reference_length": 132,
+    "candidate_length": "121",
+    "source": "Notik, arXiv:2611.22656v1, Proposition 2, pp. 5–6"
+  },
+  "general_complete_prefix_scope": [
+    {
+      "cardinality": 2,
+      "maximum_length": 18,
+      "prefix_rulers_checked": 1
+    },
+    {
+      "cardinality": 3,
+      "maximum_length": 18,
+      "prefix_rulers_checked": 2
+    },
+    {
+      "cardinality": 4,
+      "maximum_length": 18,
+      "prefix_rulers_checked": 6
+    },
+    {
+      "cardinality": 5,
+      "maximum_length": 18,
+      "prefix_rulers_checked": 18
+    }
+  ],
+  "Bose_and_Ruzsa_questions": {
+    "Bose": {
+      "reference_marks": [
+        0,
+        9,
+        12,
+        22,
+        23,
+        27,
+        29
+      ],
+      "candidate_marks": [
+        "0",
+        "17/2",
+        "23/2",
+        "21",
+        "22",
+        "26",
+        "28"
+      ],
+      "reference_ordered_distances": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        20,
+        22,
+        23,
+        27,
+        29
+      ],
+      "candidate_distances_in_reference_order": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "17/2",
+        "19/2",
+        "21/2",
+        "23/2",
+        "25/2",
+        "27/2",
+        "29/2",
+        "33/2",
+        "35/2",
+        "39/2",
+        "21",
+        "22",
+        "26",
+        "28"
+      ],
+      "minimum_distance_increment": "1",
+      "modulus": 48,
+      "cut_gap": 19,
+      "exponents": [
+        1,
+        18,
+        21,
+        27,
+        6,
+        31,
+        20
+      ],
+      "residues": [
+        4,
+        5,
+        9,
+        11,
+        30,
+        39,
+        42
+      ],
+      "missing_prefix_distance": 8,
+      "generator_order": 48
+    },
+    "Ruzsa": {
+      "reference_marks": [
+        0,
+        2,
+        3,
+        9
+      ],
+      "candidate_marks": [
+        "0",
+        "2",
+        "3",
+        "8"
+      ],
+      "reference_ordered_distances": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        9
+      ],
+      "candidate_distances_in_reference_order": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "6",
+        "8"
+      ],
+      "minimum_distance_increment": "1",
+      "modulus": 20,
+      "cut_gap": 11,
+      "residues": [
+        3,
+        14,
+        16,
+        17
+      ],
+      "missing_prefix_distance": 4
+    },
+    "source_question": "Notik, arXiv:2611.22656v1, Section 10 p.8",
+    "conclusion": "Answered: no, for each universal family question."
+  },
+  "negative_controls": "Repeated cyclic differences and a non-largest cut are rejected.",
+  "status": "All finite checks passed."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "notik-singer-chamber",
+  "version": 3,
+  "repository_url": "https://github.com/mathesis-papers/notik-singer-chamber",
+  "site_url": "https://papers.trureturing.org/notik-singer-chamber/",
+  "doi": null,
+  "reading": {},
+  "slides": [],
+  "visualizations": []
+}
