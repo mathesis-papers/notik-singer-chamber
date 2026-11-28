@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24446066",
     "current_version": 3,
     "doi": "10.5281/zenodo.24446067",
+    "kind": "note",
     "lean_source": {
       "revision": "a1ecee6d9de8eff7f246e1569bbd6211f2c471cd",
       "url": "https://github.com/the-omega-institute/trureturing/blob/a1ecee6d9de8eff7f246e1569bbd6211f2c471cd/D5/S3/Geometry/FiniteGeometry/NotikSingerChamber.lean"
@@ -55,10 +56,12 @@
     "title": "Proof of Notik's Singer-ruler conjecture with sparse certificates",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-25T17:06:43.251643627Z",
         "revision": "3",
-        "version": 3
+        "version": 3,
+        "version_label": null
       }
     ],
     "work": "notik-singer-chamber"
